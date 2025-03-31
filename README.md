@@ -1,0 +1,2 @@
+# NGGC.web
+gaming community
