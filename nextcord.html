@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextCord - NGGC.WEBSITE</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">NGGC.WEBSITE</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Explore Our Games</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main class="nextcord-content">
+        <!-- Auth Section -->
+        <div id="auth-section" class="auth-section">
+            <div class="auth-container" data-aos="fade-up">
+                <h2>Welcome to NextCord</h2>
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+                
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <input type="email" id="login-email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-button">Login</button>
+                </form>
+
+                <!-- Sign Up Form -->
+                <form id="signup-form" class="auth-form">
+                    <div class="form-group">
+                        <input type="text" id="signup-username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="signup-email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signup-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-button">Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Chat Interface (Hidden by default) -->
+        <div id="chat-interface" class="chat-interface hidden">
+            <!-- Sidebar -->
+            <div class="chat-sidebar">
+                <div class="user-profile">
+                    <div class="profile-image">
+                        <img id="user-avatar" src="https://via.placeholder.com/40" alt="User Avatar">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="user-info">
+                        <span id="username">Username</span>
+                        <button id="edit-profile" class="edit-profile-btn">Edit Profile</button>
+                    </div>
+                </div>
+
+                <!-- Channels -->
+                <div class="channels-section">
+                    <h3>Channels</h3>
+                    <ul id="channels-list">
+                        <li class="channel active"># general</li>
+                        <li class="channel"># gaming</li>
+                        <li class="channel"># tournaments</li>
+                    </ul>
+                </div>
+
+                <!-- Online Users -->
+                <div class="online-users-section">
+                    <h3>Online Users</h3>
+                    <ul id="online-users-list">
+                        <!-- Populated dynamically -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Chat Area -->
+            <div class="chat-main">
+                <div class="chat-header">
+                    <h2># general</h2>
+                    <div class="chat-actions">
+                        <button id="voice-call" class="action-button">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button id="video-call" class="action-button">
+                            <i class="fas fa-video"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="messages-container" id="messages">
+                    <!-- Messages will be populated here -->
+                </div>
+
+                <div class="chat-input-area">
+                    <button id="upload-image" class="upload-button">
+                        <i class="fas fa-image"></i>
+                    </button>
+                    <input type="text" id="message-input" placeholder="Type a message...">
+                    <button id="send-message" class="send-button">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Edit Modal -->
+        <div id="profile-modal" class="modal">
+            <div class="modal-content">
+                <h2>Edit Profile</h2>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label>Display Name</label>
+                        <input type="text" id="display-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Avatar URL</label>
+                        <input type="url" id="avatar-url">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="user-status">
+                            <option value="online">Online</option>
+                            <option value="away">Away</option>
+                            <option value="dnd">Do Not Disturb</option>
+                        </select>
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="submit" class="save-button">Save Changes</button>
+                        <button type="button" class="cancel-button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <script type="module" src="/nextcord.js"></script>
+</body>
+</html>
